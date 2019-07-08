@@ -1,14 +1,29 @@
+.app {
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .roll {
     height: 100px;
     width: 100px;
 }
 
-#double-d6-buttons {
+.double-d6 {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 
-#d6, #d12, #d20, #double-d6 {
+.rolls {
     display: flex;
+    justify-content: center;
+}
+
+.d6, .d12, .d20 {
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
 }
