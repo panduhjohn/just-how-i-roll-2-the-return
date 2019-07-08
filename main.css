@@ -1,0 +1,14 @@
+.roll {
+    height: 100px;
+    width: 100px;
+}
+
+#double-d6-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+#d6, #d12, #d20, #double-d6 {
+    display: flex;
+    justify-content: space-around;
+}
