@@ -39,6 +39,7 @@ Check to see that everything still works!
 
 ### Step 2 - Extend Our App with D8 Rolls
 
+
 So we've got our shorter functions now. Let's make a new one, and you can see how easy it is.
 
 Write a new function called `rollD8`, and in it, use our new `getRoll` function to get a roll from 1 to 8. Then copy and paste the last three lines from `rollD12`, all that `newSrc` and `rollImage` stuff, and paste it in below.

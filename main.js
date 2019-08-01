@@ -9,7 +9,7 @@ d12Button.onclick = rollD12;
 const d20Button = document.querySelector('.d20-roll')
 d20Button.onclick = rollD20;
 const d8Button = document.querySelector('.d8-roll')
-d8Button.onclick = undefined;
+d8Button.onclick = rollD8;
 const d4Button = document.querySelector('.d4-roll')
 d4Button.onclick = undefined;
 const tripleD6Button1 = document.querySelector('.triple-d6-roll-1')
@@ -20,51 +20,48 @@ const tripleD6Button3 = document.querySelector('.triple-d6-roll-3')
 tripleD6Button3.onclick = undefined;
 
 
+////////////////////////////////////////////////////////////////////
+function getRollWithMax(max) {
+    return Math.ceil(Math.random() * max);
+}
+
+function getImage(roll, selector) {
+    const newSrc = `./images/d6/${roll}.png`;
+    const rollImage = document.querySelector(selector);
+    rollImage.src = newSrc;
+}
+
+function getNumbersImage(roll, selector) {
+    const newSrc = `./images/numbers/${roll}.png`;
+    const rollImage = document.querySelector(selector);
+    rollImage.src = newSrc;
+}
+////////////////////////////////////////////////////////////////////
 
 
 function rollD6() {
-    const randomFloatUnderOne = Math.random();
-    const randomFloat = randomFloatUnderOne * 6;
-    const roll = Math.ceil(randomFloat);
-
-    const newSrc = `./images/d6/${roll}.png`;
-    const rollImage = document.querySelector('.d6-roll');
-    rollImage.src = newSrc;
+    const roll = getRollWithMax(6);
+    getImage(roll, '.d6-roll')   
 }
 
-function rollD12() {
-    const randomFloatUnderOne = Math.random();
-    const randomFloat = randomFloatUnderOne * 12;
-    const roll = Math.ceil(randomFloat);
+function rollD8() {
+    const roll = getRollWithMax(8);
+    getNumbersImage(roll, '.d8-roll')
 
-    const newSrc = `./images/numbers/${roll}.png`;
-    const rollImage = document.querySelector('.d12-roll');
-    rollImage.src = newSrc;
+}
+function rollD12() {
+    const roll = getRollWithMax(12);
+    getNumbersImage(roll, '.d12-roll')
 }
 
 function rollD20() {
-    const randomFloatUnderOne = Math.random();
-    const randomFloat = randomFloatUnderOne * 20;
-    const roll = Math.ceil(randomFloat);
-
-    const newSrc = `./images/numbers/${roll}.png`;
-    const rollImage = document.querySelector('.d20-roll');
-    rollImage.src = newSrc;
+    const roll = getRollWithMax(20);
+    getNumbersImage(roll, '.d20-roll')
 }
 
 function rollDoubleD6() {
-    const randomFloatUnderOne1 = Math.random();
-    const randomFloat1 = randomFloatUnderOne1 * 6;
-    const roll1 = Math.ceil(randomFloat1);
-
-    const randomFloatUnderOne2 = Math.random();
-    const randomFloat2 = randomFloatUnderOne2 * 6;
-    const roll2 = Math.ceil(randomFloat2);
-
-    const newSrc1 = `./images/d6/${roll1}.png`;
-    const newSrc2 = `./images/d6/${roll2}.png`;
-    const rollImage1 = document.querySelector('.double-d6-roll-1');
-    const rollImage2 = document.querySelector('.double-d6-roll-2');
-    rollImage1.src = newSrc1;
-    rollImage2.src = newSrc2;
+    const roll1 = getRollWithMax(6);
+    const roll2 = getRollWithMax(6);
+    getImage (roll1, '.double-d6-roll-1');
+    getImage (roll2, '.double-d6-roll-2');
 }
