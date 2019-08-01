@@ -11,13 +11,13 @@ d20Button.onclick = rollD20;
 const d8Button = document.querySelector('.d8-roll')
 d8Button.onclick = rollD8;
 const d4Button = document.querySelector('.d4-roll')
-d4Button.onclick = undefined;
+d4Button.onclick = rollD4;
 const tripleD6Button1 = document.querySelector('.triple-d6-roll-1')
-tripleD6Button1.onclick = undefined;
+tripleD6Button1.onclick = rollTripleD6;
 const tripleD6Button2 = document.querySelector('.triple-d6-roll-2')
-tripleD6Button2.onclick = undefined;
+tripleD6Button2.onclick = rollTripleD6;
 const tripleD6Button3 = document.querySelector('.triple-d6-roll-3')
-tripleD6Button3.onclick = undefined;
+tripleD6Button3.onclick = rollTripleD6;
 
 
 ////////////////////////////////////////////////////////////////////
@@ -38,6 +38,10 @@ function getNumbersImage(roll, selector) {
 }
 ////////////////////////////////////////////////////////////////////
 
+function rollD4() {
+    const roll = getRollWithMax(4);
+    getNumbersImage(roll, '.d4-roll')
+}
 
 function rollD6() {
     const roll = getRollWithMax(6);
@@ -64,4 +68,13 @@ function rollDoubleD6() {
     const roll2 = getRollWithMax(6);
     getImage (roll1, '.double-d6-roll-1');
     getImage (roll2, '.double-d6-roll-2');
+}
+
+function rollTripleD6 () {
+    const roll1 = getRollWithMax(6);
+    const roll2 = getRollWithMax(6);
+    const roll3 = getRollWithMax(6);
+    getImage (roll1, '.triple-d6-roll-1');
+    getImage (roll2, '.triple-d6-roll-2');
+    getImage (roll3, '.triple-d6-roll-3');
 }
